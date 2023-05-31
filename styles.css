@@ -1,10 +1,15 @@
 
 body {
-    background-color: powderblue;
+    background-color: rgb(146, 231, 179);
   }
-  h1 {
-    color: blue;
-  }
-  p {
-    color: red;
-  } 
+h1 {
+   color: black;
+}
+p {
+   color: red;
+} 
+input{
+    background-color: beige;
+    border: 2px solid beige;
+    border-radius: 5px;
+}
