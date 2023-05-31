@@ -1,0 +1,160 @@
+(base) comp65@comp65:~/Desktop/T190458555$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/comp65/Desktop/T190458555/.git/
+(base) comp65@comp65:~/Desktop/T190458555$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        styles.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) comp65@comp65:~/Desktop/T190458555$ git add .
+(base) comp65@comp65:~/Desktop/T190458555$ git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'comp65@comp65.(none)')
+(base) comp65@comp65:~/Desktop/T190458555$ ^C
+(base) comp65@comp65:~/Desktop/T190458555$ git config --global user.email "sumedhpatil2020.it@mmcoe.edu.in"
+(base) comp65@comp65:~/Desktop/T190458555$ git config --global user.name "Sumedh"
+(base) comp65@comp65:~/Desktop/T190458555$ git add .
+(base) comp65@comp65:~/Desktop/T190458555$ git commit -m "first commit"
+[master (root-commit) 54b2531] first commit
+ 2 files changed, 27 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 styles.css
+(base) comp65@comp65:~/Desktop/T190458555$ git branch -M main
+(base) comp65@comp65:~/Desktop/T190458555$ git remote add origin https://github.com/sumedh0806/Exam.git
+(base) comp65@comp65:~/Desktop/T190458555$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 443 bytes | 443.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/sumedh0806/Exam.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+(base) comp65@comp65:~/Desktop/T190458555$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) comp65@comp65:~/Desktop/T190458555$ git pull https://github.com/sumedh0806/Exam2.git
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 392 bytes | 392.00 KiB/s, done.
+From https://github.com/sumedh0806/Exam2
+ * branch            HEAD       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+(base) comp65@comp65:~/Desktop/T190458555$ git branch newhtml
+(base) comp65@comp65:~/Desktop/T190458555$ git checkout newhtml
+M       index.html
+M       styles.css
+Switched to branch 'newhtml'
+(base) comp65@comp65:~/Desktop/T190458555$ git commit -a -m 'modified html code'
+[newhtml 4781738] modified html code
+ 2 files changed, 20 insertions(+), 7 deletions(-)
+(base) comp65@comp65:~/Desktop/T190458555$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+(base) comp65@comp65:~/Desktop/T190458555$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) comp65@comp65:~/Desktop/T190458555$ git merge newhtml
+Updating 54b2531..4781738
+Fast-forward
+ index.html |  8 ++++++++
+ styles.css | 19 ++++++++++++-------
+ 2 files changed, 20 insertions(+), 7 deletions(-)
+(base) comp65@comp65:~/Desktop/T190458555$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(base) comp65@comp65:~/Desktop/T190458555$ git merge newhtml
+Already up to date.
+(base) comp65@comp65:~/Desktop/T190458555$ git checkout newhtml
+Switched to branch 'newhtml'
+(base) comp65@comp65:~/Desktop/T190458555$ git add index.html
+\(base) comp65@comp65:~/Desktop/T190458555$ git status
+On branch newhtml
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+(base) comp65@comp65:~/Desktop/T190458555$ git commit -m "modified html code"
+[newhtml 9ea7adb] modified html code
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(base) comp65@comp65:~/Desktop/T190458555$ ^C
+(base) comp65@comp65:~/Desktop/T190458555$ git push newhtml
+fatal: 'newhtml' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(base) comp65@comp65:~/Desktop/T190458555$ ^C
+(base) comp65@comp65:~/Desktop/T190458555$ ^C
+(base) comp65@comp65:~/Desktop/T190458555$ git remote add origin https://github.com/sumedh0806/Exam.git
+error: remote origin already exists.
+(base) comp65@comp65:~/Desktop/T190458555$ git push -u origin newhtml
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 874 bytes | 874.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: 
+remote: Create a pull request for 'newhtml' on GitHub by visiting:
+remote:      https://github.com/sumedh0806/Exam/pull/new/newhtml
+remote: 
+To https://github.com/sumedh0806/Exam.git
+ * [new branch]      newhtml -> newhtml
+Branch 'newhtml' set up to track remote branch 'newhtml' from 'origin'.
+(base) comp65@comp65:~/Desktop/T190458555$ git merge newhtml
+Already up to date.
+(base) comp65@comp65:~/Desktop/T190458555$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        index.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+(base) comp65@comp65:~/Desktop/T190458555$ git merge newhtml
+Already up to date.
+(base) comp65@comp65:~/Desktop/T190458555$ 
